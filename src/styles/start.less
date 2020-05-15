@@ -1,0 +1,167 @@
+.start {
+    margin: 0 -(@z-m-padding);
+    .start-wrapper {
+        background: url('img/start-bg.png') no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: fixed; 
+        @media(max-width: 767px) {
+            position: inherit;
+        }
+        
+        .start-content {
+            padding-top: 75px;
+            padding-bottom: 40px;
+            .clearfix;
+            @media(max-width: 767px) {
+                padding-bottom: 0;
+            }
+
+            .select-country label, .select-language label {
+              font-weight: bold;
+            }
+
+            .start-dropdowns {
+                .clearfix;
+            }
+
+            .select-wrapper {
+                padding: 20px 20px 30px;
+                background: url('img/white_bg_60.png') repeat;
+                .clearfix;
+            }
+
+            .enrollment-options {
+                margin-top: 30px;
+                &.patients{
+                    color:#3e3e3e;
+                    margin:0 0 15px 0;
+
+                }
+                .option-wrapper {
+                    position:relative;
+                    padding: 10px 20px 0px;
+                    @media(max-width: 767px) {
+                        height: 200px;
+                        border-bottom: 1px solid #ccc;
+                    }
+                    @media(min-width: 768px) {
+                        min-width: 250px;
+                        .icons {
+                            height: 250px;
+                        }
+                    }
+                    @media(min-width:992px) {
+                        .icons {
+                            height: 200px;
+                        }
+                    }
+                    @media(min-width:1200px) {
+                        height: 160px;
+                    }
+                    background: @white;
+                }
+                .icons {
+                    font-size: 50px;
+                    float: left;
+                    margin-right: 10px;
+                    margin-top: -5px;
+                    .ico-user-circled {
+                        display: block;
+                    }
+                    .ico-check-circled {
+                        display: none;
+                    }
+                }
+                .fp-option {
+                    &:hover{
+                        cursor:pointer;
+                    }
+                    .icons {
+                        color: @orange;
+                    }
+					//height: 150px;
+                }
+		        .fp-option.active {
+                  .option-wrapper {
+                     background: @orange;
+                  }
+                }
+                .getfit-option {
+                    &:hover{
+                        cursor:pointer;
+                    }
+                    .icons {
+                        color: @getfitblue;
+                    }
+                    //height: 150px;
+                }
+                .getfit-option.active {
+                  .option-wrapper {
+                     background: @getfitblue;
+                     height: auto;
+                     padding : 10px;
+                  }
+                }
+                .pc-option {
+                     &:hover{
+                        cursor:pointer;
+                    }
+                    .icons {
+                        color: @green;
+                    }
+                }
+		        .pc-option.active {
+                  .option-wrapper {
+                     background: @green;
+                  }
+                }
+                .cd-option {
+                    &:hover{
+                        cursor:pointer;
+                    }
+                    .icons {
+                        color: @c-m-blue;
+                    }
+                    height: 150px;
+                }
+                .cd-option.active {
+                  .option-wrapper {
+                     background: @c-m-blue;
+                  }
+                }
+                p {} .active {
+                    .option-wrapper {
+                        color: @white;
+                        .icons {
+                            color: @white;
+                            .ico-user-circled {
+                                display: none;
+                            }
+                            .ico-check-circled {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    p.continue-buttons {
+        position:relative;
+        z-index:10;
+        margin-bottom: -40px;
+        @media(max-width: 767px) {
+            margin-bottom: 25px;
+        }
+        button {
+            float: right;
+            margin-top: 15px;
+        }
+    }
+}
+
+.vinoth{
+    color: red;
+}
