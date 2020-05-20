@@ -4,7 +4,8 @@ import './App.css';
 import Starttpl from './component/Starttpl';
 import AccountSetup from './component/AccountSetup';
 import Summary from './component/Summary';
-import  {BrowserRouter as Router, Switch, Route }from'react-router-dom'
+import  {BrowserRouter as Router, Switch, Route }from'react-router-dom';
+
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
      <Route path = "/account_setup" component = {AccountSetup}></Route>
      <Route path = "/summary" component = {Summary}></Route>
      </Switch>
+     
     </div>
     </Router>
   );
