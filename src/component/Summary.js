@@ -35,6 +35,13 @@ const useStyles = createUseStyles({
   },
   page_body:{
       background:"#eeeff0",
+  },
+  page_title:{
+      margin:"0px",
+      padding:"0px",
+      fontSize:"15px",
+      fontWeight:700,
+      textTransform:'uppercase',
   }
 });
 
@@ -42,9 +49,10 @@ const Summary = () => {
   const classes = useStyles();
   return (
     <div>
-      <div>
-        <h1>Complete</h1>
-        <div >        
+    <h1 >Complete</h1>
+    <div> 
+    <div className = {classes.page_body}>
+             
         <h2>Enrollment Summary </h2>
         <h2 className={classes.tab_head}>Enrollment Settings</h2>
         <Grid container spacing={2}>
@@ -237,7 +245,9 @@ const Summary = () => {
         <Grid container spacing={1}>
           <Grid item xs={12}>
             <div style={{ padding: "10px" }}>
-              <textarea rows="10" style={{ width: "100%" }}></textarea>
+              <textarea rows="10" style={{ width: "100%" }}>
+              </textarea>
+              
             </div>
           </Grid>
         </Grid>
