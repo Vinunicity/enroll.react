@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Grid } from "@material-ui/core";
-
+import { Link } from "react-router-dom";
 import { createUseStyles } from "react-jss";
 import startImage from "../common/img/start-bg.png";
 import selectImage from "../common/img/white_bg_60.png";
@@ -175,6 +175,9 @@ const Start = (props) => {
           </Grid>
         </Grid>
       </Grid>
+      <Link to ="/account_setup">
+        <button>Continue</button>                            
+      </Link>
     </Fragment>
   );
 };
