@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { createUseStyles } from "react-jss";
 import { Grid } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const useStyles = createUseStyles({
   stepper_title: {
@@ -341,6 +342,12 @@ const AccountSetup = () => {
         </div>
         
       </div>
+      <Link to="/">
+        <button>GoBack</button>
+      </Link>
+      <Link to ="/summary">
+        <button>Continue</button>                            
+      </Link>
     </Fragment>
   );
 };
