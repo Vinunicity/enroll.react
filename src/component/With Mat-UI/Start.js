@@ -51,6 +51,7 @@ const useStyles = createUseStyles({
     color: "#333333",
     fontWeight: "bold",
     marginLeft: "20px",
+    textAlign: "left",
   },
   clearfix: {
     overflow: "auto",
@@ -118,7 +119,7 @@ const Start = (props) => {
 
       <Grid container className={classes.startWrapper} spacing={2}>
         <Grid item xs={12}>
-          <Grid container justify="center" >
+          <Grid container justify="center">
             {/* <label className ={classes.selectWrapper}>Select Your Market</label>
                             <select className ={classes.selectWrapper}>
                             <option value = "English">English</option>
@@ -126,57 +127,66 @@ const Start = (props) => {
                             </select> */}
             {/* <span className={classes.selectWrapper}>Select Your Market</span> */}
             <table className={classes.selectWrapper}>
-              <tr>
-                <td>Select Your Market</td>
-                <td>Select Your Language</td>
-              </tr>
-              <tr>
-                <td>
-                  <select className={classes.optionWrapper}>
-                    <option className={classes.optionWrapper}>India</option>
-                  </select>
-                </td>
+              <thead>
+                <tr>
+                  <td>Select Your Market</td>
+                  <td>Select Your Language</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <select className={classes.optionWrapper}>
+                      <option className={classes.optionWrapper}>India</option>
+                    </select>
+                  </td>
 
-                <td>
-                  <select className={classes.optionWrapper}>
-                    <option>Hindi</option>
-                    <option>English</option>
-                  </select>
-                </td>
-              </tr>
+                  <td>
+                    <select className={classes.optionWrapper}>
+                      <option>Hindi</option>
+                      <option>English</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </Grid>
         </Grid>
 
         <Grid container justify="center">
           <Grid item xs={6}>
-            <table className={classes.disWrapper}>
-              <h1 className={classes.disContent}>DISTRIBUTOR (Free Sign-Up)</h1>
-              <tr>
-                {" "}
-                <td>
-                  <div>
-                    <input
-                      type="radio"
-                      className={classes.radioDisType}
-                    ></input>
-                  </div>
-                  <div>
-                    <p>
-                      {" "}
-                      By starting a Unicity business, you’ll have the
-                      opportunity to earn commissions and bonuses on referral
-                      customer purchases as you help others Make Life Better.{" "}
-                    </p>
-                  </div>
-                </td>
-              </tr>
-            </table>
+            <div className={classes.disWrapper}>
+              <span className={classes.disContent}>
+                DISTRIBUTOR (Free Sign-Up)
+              </span>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div>
+                        <input
+                          type="radio"
+                          className={classes.radioDisType}
+                        ></input>
+                      </div>
+                      <div>
+                        <p>
+                          By starting a Unicity business, you’ll have the
+                          opportunity to earn commissions and bonuses on
+                          referral customer purchases as you help others Make
+                          Life Better.
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </Grid>
         </Grid>
       </Grid>
-      <Link to ="/account_setup">
-        <button>Continue</button>                            
+      <Link to="/account_setup">
+        <button>Continue</button>
       </Link>
     </Fragment>
   );

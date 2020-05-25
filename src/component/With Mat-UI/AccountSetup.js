@@ -211,7 +211,6 @@ const AccountSetup = () => {
             <Grid item xs={6}>
               <label className={classes.inputTitle}>Fullname</label>
               <input type="text" className={classes.formControl}></input>
-
             </Grid>
             <Grid item xs={3}>
               <label className={classes.inputTitle}>Relationship</label>
@@ -326,27 +325,27 @@ const AccountSetup = () => {
             </Grid>
           </Grid>
         </div>
-        
+
         <div style={{ marginTop: "30px" }}>
           <Grid container spacing={2}>
             <Grid item xs={3}>
-              <label className={classes.inputTitle}> Password status bar </label>
-             
+              <label className={classes.inputTitle}>
+                {" "}
+                Password status bar{" "}
+              </label>
             </Grid>
             <Grid item xs={3}>
               <label className={classes.inputTitle}> Show Password </label>
               <input type="checkbox" className={classes.formControl}></input>
             </Grid>
-            
           </Grid>
         </div>
-        
       </div>
       <Link to="/">
         <button>GoBack</button>
       </Link>
-      <Link to ="/summary">
-        <button>Continue</button>                            
+      <Link to="/summary">
+        <button>Continue</button>
       </Link>
     </Fragment>
   );

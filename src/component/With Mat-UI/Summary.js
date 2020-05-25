@@ -36,7 +36,8 @@ const useStyles = createUseStyles({
     paddingTop: "20px",
   },
   gridSpacing: {
-    margin: "12px",
+    marginLeft: "12px",
+    marginTop: "-12px",
   },
   sectionTitle: {
     color: "#ffffff",
@@ -55,18 +56,10 @@ const useStyles = createUseStyles({
     fontWeight: "500",
   },
   sectionBody: {
-    fontWeight: "bold",
-    width: "50%",
-    float: "left",
-    paddingLeft: "15px",
-    paddingRight: "15px",
-    fontSize: "13px",
-    color: "#333333",
     backgroundColor: "#FFFFFF",
-    position: "relative",
-    borderBottom: "1px dotted #cfd0d1",
   },
 });
+
 const Summary = () => {
   const classes = useStyles();
 
@@ -82,21 +75,176 @@ const Summary = () => {
         <div className={classes.heading}>Enrollment Summary</div>
         <div className={classes.gridSpacing}>
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid item xs={9}>
               <div className={classes.sectionTitle}>Enrollment Settings</div>
             </Grid>
           </Grid>
-          <div className ={classes.sectionBody}>
-            <Grid container spacing ={2} >
-                <Grid item xs = {12} >
-                   <table>
-                       <td>Country</td>
-                       <td>Country</td>
-                   </table>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionBody}>
+                <Grid container xs={6}>
+                  <Grid
+                    item
+                    xs={5}
+                    style={{ textAlign: "left", paddingLeft: "15px" }}
+                  >
+                    <span>Country</span>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={7}
+                    style={{ textAlign: "left", paddingLeft: "15px" }}
+                  >
+                    India
+                  </Grid>
                 </Grid>
-                
+              </div>
             </Grid>
-          </div>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div>
+                <div className={classes.sectionBody}></div>
+              </div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>Enrollment Settings</div>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={classes.gridSpacing}>
+          <Grid container spacing={2}>
+            <Grid item xs={9}>
+              <div className={classes.sectionTitle}>
+                The Distributor Agreement - Terms & Conditions
+              </div>
+            </Grid>
+          </Grid>
+        </div>
+        <div
+          className={classes.gridSpacing}
+          style={{
+            textAlign: "left",
+            margintLeft: "2px",
+            paddingLeft: "16px",
+            paddingTop: "10px",
+            backgroundColor: "white",
+          }}
+        >
+          <span>Please review the terms and conditions below.</span>
+          <Grid container spacing={1}>
+            <Grid item xs={9}>
+              <div>
+                <textarea rows="10" style={{ width: "100%" }}></textarea>
+              </div>
+            </Grid>
+          </Grid>
         </div>
       </div>
       <Link to="/account_setup">
