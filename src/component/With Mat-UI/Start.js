@@ -161,24 +161,23 @@ const Start = (props) => {
               </span>
               <table>
                 <tbody>
-                  <tr>
-                    <td>
-                      <div>
-                        <input
-                          type="radio"
-                          className={classes.radioDisType}
-                        ></input>
-                      </div>
-                      <div>
-                        <p>
-                          By starting a Unicity business, you’ll have the
-                          opportunity to earn commissions and bonuses on
-                          referral customer purchases as you help others Make
-                          Life Better.
-                        </p>
-                      </div>
-                    </td>
-                  </tr>
+                <tr>
+                   <td>
+                    <div>
+                      <input
+                        type="radio"
+                        className={classes.radioDisType}
+                      ></input>
+                    </div>
+                    <div>
+                      <p>
+                        By starting a Unicity business, you’ll have the
+                        opportunity to earn commissions and bonuses on referral
+                        customer purchases as you help others Make Life Better.
+                      </p>
+                    </div>
+                  </td>
+                </tr>
                 </tbody>
               </table>
             </div>
