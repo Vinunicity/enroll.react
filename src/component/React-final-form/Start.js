@@ -9,6 +9,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import StepperBar from './StepperBar';
 const useStyles = createUseStyles({
   stepper_title: {
     margin: "15px",
@@ -26,6 +27,7 @@ const useStyles = createUseStyles({
     backgroundRepeat: "no-repeat",
     paddingTop: "70px",
     paddingBottom: "40px",
+    overflowX:"hidden",
   },
   centerGrid: {
     margin: "auto",
@@ -104,6 +106,9 @@ const useStyles = createUseStyles({
     marginRight: "5px",
     color: "inherit",
   },
+  scrollBar:{
+    overflowX:"hidden",
+}
 });
 
 const Start = (props) => {
@@ -111,7 +116,7 @@ const Start = (props) => {
   return (
     <Fragment>
       <div>
-        <span>Stepper navs</span>
+        <StepperBar></StepperBar>
       </div>
       <div className={classes.stepper_title}>
         <span>Start</span>

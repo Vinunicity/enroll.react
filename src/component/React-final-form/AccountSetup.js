@@ -2,11 +2,9 @@ import React, { Fragment } from "react";
 import { createUseStyles } from "react-jss";
 import { Grid } from "@material-ui/core";
 import { Form, Field } from "react-final-form";
+import StepperBar from './StepperBar';
 
 import { Link } from "react-router-dom";
-
-
-import Button from "@material-ui/core/Button";
 
 const useStyles = createUseStyles({
   pageWrapper: {
@@ -37,7 +35,7 @@ const useStyles = createUseStyles({
   },
   formControl: {
     display: "block",
-    marginLeft: "13px",
+    //marginLeft: "13px",
     height: "46px",
     lineHeight: "46px",
     width: "100%",
@@ -47,18 +45,20 @@ const useStyles = createUseStyles({
     border: "1px solid #cccccc",
     textTransform: "none",
     position: "relative",
-    marginTop: "5px",
-    marginTop: "20px",
+    //marginTop: "5px",
+    //marginTop: "20px",
+    margin: "10px 305px 3px 14px",
     borderRadius: "6px",
   },
   inputTitle: {
-    margin: "5px 588px 3px 14px",
+    //margin: "5px 588px 3px 14px",
     fontSize: "20px",
     color: "#777b7c",
     fontWeight: "normal",
     fontSize: "14px",
     height: "40px",
-    paddingBottom: "45px",
+    //paddingBottom: "45px",
+    margin: "10px 305px 3px 14px",
   },
   gridspacing: {
     paddingTop: "15px",
@@ -76,6 +76,9 @@ const AccountSetup = () => {
 
   return (
     <Fragment>
+         <div>
+        <StepperBar></StepperBar>
+      </div>
       Account Setup with React final form
       <div className={classes.pageWrapper}>
         <div>
@@ -289,65 +292,67 @@ const AccountSetup = () => {
                   </Grid>
                 </Grid>
               </div>
-                
+
               <div className={classes.gridspacing}>
-          <Grid container spacing={2}>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}>Gender (optional)</label>
-              <input
-                type="radio"
-                className={classes.radioStyle}
-                style={{ display: "inline" }}
-              />
-              Male
-              <input
-                type="radio"
-                className={classes.radioStyle}
-                style={{ display: "inline" }}
-              />
-              Female
-              <input
-                type="radio"
-                className={classes.radioStyle}
-                style={{ display: "inline" }}
-              />
-              Transgender
-            </Grid>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}>Maritial Status</label>
-              <input
-                type="radio"
-                className={classes.radioStyle}
-                style={{ display: "inline" }}
-              />
-              Single
-              <input
-                type="radio"
-                className={classes.radioStyle}
-                style={{ display: "inline" }}
-              />
-              Married
-            </Grid>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}>
-                {" "}
-                I want to receive email communications related to my business{" "}
-              </label>
-            </Grid>
-          </Grid>
-        </div>
-
-        <div>
-          <h2 className={classes.heading}> Co-Applicant/Nominee </h2>
-        </div>
-
-        <div className={classes.gridspacing}>
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              
-              <label className={classes.inputTitle}>
-              Fullname{" "}
+                <Grid container spacing={2}>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}>
+                      Gender (optional)
                     </label>
+                    <input
+                      type="radio"
+                      className={classes.radioStyle}
+                      style={{ display: "inline" }}
+                    />
+                    Male
+                    <input
+                      type="radio"
+                      className={classes.radioStyle}
+                      style={{ display: "inline" }}
+                    />
+                    Female
+                    <input
+                      type="radio"
+                      className={classes.radioStyle}
+                      style={{ display: "inline" }}
+                    />
+                    Transgender
+                  </Grid>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}>
+                      Maritial Status
+                    </label>
+                    <input
+                      type="radio"
+                      className={classes.radioStyle}
+                      style={{ display: "inline" }}
+                    />
+                    Single
+                    <input
+                      type="radio"
+                      className={classes.radioStyle}
+                      style={{ display: "inline" }}
+                    />
+                    Married
+                  </Grid>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}>
+                      {" "}
+                      I want to receive email communications related to my
+                      business{" "}
+                    </label>
+                  </Grid>
+                </Grid>
+              </div>
+
+              <div>
+                <h2 className={classes.heading}> Co-Applicant/Nominee </h2>
+              </div>
+
+              <div className={classes.gridspacing}>
+                <Grid container spacing={2}>
+                  <Grid item xs={6}>
+                    <label className={classes.inputTitle}>Fullname </label>
                     <Field name="co_fullName">
                       {(props) => (
                         <div>
@@ -358,36 +363,42 @@ const AccountSetup = () => {
                         </div>
                       )}
                     </Field>
-            </Grid>
-            <Grid item md={3}>
-                  <label className={classes.inputTitle}>Relationship</label>
-                  <Field name="relation">
-                    {(props) => (
-                      <div>
-                        <select className={classes.formControl}>
-                          <option className={classes.formControl}>Spouse</option>
-                          <option className={classes.formControl}>
-                          Child
-                          </option>
-                          <option className={classes.formControl}>Parent</option>
-                <option className={classes.formControl}>Sibling</option>
-                        </select>
-                      </div>
-                    )}
-                  </Field>
+                  </Grid>
+                  <Grid item md={3}>
+                    <label className={classes.inputTitle}>Relationship</label>
+                    <Field name="relation">
+                      {(props) => (
+                        <div>
+                          <select className={classes.formControl}>
+                            <option className={classes.formControl}>
+                              Spouse
+                            </option>
+                            <option className={classes.formControl}>
+                              Child
+                            </option>
+                            <option className={classes.formControl}>
+                              Parent
+                            </option>
+                            <option className={classes.formControl}>
+                              Sibling
+                            </option>
+                          </select>
+                        </div>
+                      )}
+                    </Field>
+                  </Grid>
                 </Grid>
-          </Grid>
-        </div>
+              </div>
 
-        <div>
-          <h2 className={classes.heading}>Mailing Address</h2>
-        </div>
+              <div>
+                <h2 className={classes.heading}>Mailing Address</h2>
+              </div>
 
-        <div className={classes.gridspacing}>
-          <Grid container spacing={2}>
-            <Grid item md={3}>
-              <label className={classes.inputTitle}>Address 1</label>
-              <Field name="Add_1">
+              <div className={classes.gridspacing}>
+                <Grid container spacing={2}>
+                  <Grid item md={3}>
+                    <label className={classes.inputTitle}>Address 1</label>
+                    <Field name="Add_1">
                       {(props) => (
                         <div>
                           <input
@@ -397,10 +408,10 @@ const AccountSetup = () => {
                         </div>
                       )}
                     </Field>
-            </Grid>
-            <Grid item md={3}>
-              <label className={classes.inputTitle}>Address 2</label>
-              <Field name="Add_2">
+                  </Grid>
+                  <Grid item md={3}>
+                    <label className={classes.inputTitle}>Address 2</label>
+                    <Field name="Add_2">
                       {(props) => (
                         <div>
                           <input
@@ -410,10 +421,10 @@ const AccountSetup = () => {
                         </div>
                       )}
                     </Field>
-            </Grid>
-            <Grid item md={3}>
-              <label className={classes.inputTitle}>City</label>
-              <Field name="City">
+                  </Grid>
+                  <Grid item md={3}>
+                    <label className={classes.inputTitle}>City</label>
+                    <Field name="City">
                       {(props) => (
                         <div>
                           <input
@@ -423,32 +434,36 @@ const AccountSetup = () => {
                         </div>
                       )}
                     </Field>
-            </Grid>
-          </Grid>
-        </div>
+                  </Grid>
+                </Grid>
+              </div>
 
-        <div style={{ marginTop: "30px" }}>
-          <Grid container spacing={2}>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}>State</label>
-              <Field name="relation">
-                    {(props) => (
-                      <div>
-                        <select className={classes.formControl}>
-                <option className={classes.formControl}>Karnataka</option>
-                <option className={classes.formControl}>Tamilnadu</option>
-              </select>
-                      </div>
-                    )}
-                  </Field>
-            </Grid>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}>Postal Code</label>
-              <input type="text" className={classes.formControl}></input>
-            </Grid>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}>Postal Code</label>
-              <Field name="postal-code">
+              <div style={{ marginTop: "30px" }}>
+                <Grid container spacing={2}>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}>State</label>
+                    <Field name="relation">
+                      {(props) => (
+                        <div>
+                          <select className={classes.formControl}>
+                            <option className={classes.formControl}>
+                              Karnataka
+                            </option>
+                            <option className={classes.formControl}>
+                              Tamilnadu
+                            </option>
+                          </select>
+                        </div>
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}>Postal Code</label>
+                    <input type="text" className={classes.formControl}></input>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}>Postal Code</label>
+                    <Field name="postal-code">
                       {(props) => (
                         <div>
                           <input
@@ -458,24 +473,27 @@ const AccountSetup = () => {
                         </div>
                       )}
                     </Field>
-            </Grid>
-          </Grid>
-        </div>
+                  </Grid>
+                </Grid>
+              </div>
 
-        <div>
-          <div>
-            <h2 className={classes.heading}>
-              {" "}
-              Direct Deposit for Commissions{" "}
-            </h2>
-          </div>
-        </div>
+              <div>
+                <div>
+                  <h2 className={classes.heading}>
+                    {" "}
+                    Direct Deposit for Commissions{" "}
+                  </h2>
+                </div>
+              </div>
 
-        <div className={classes.gridspacing}>
-          <Grid container spacing={2}>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}> Account Number </label>
-              <Field name="acc-num">
+              <div className={classes.gridspacing}>
+                <Grid container spacing={2}>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}>
+                      {" "}
+                      Account Number{" "}
+                    </label>
+                    <Field name="acc-num">
                       {(props) => (
                         <div>
                           <input
@@ -485,13 +503,13 @@ const AccountSetup = () => {
                         </div>
                       )}
                     </Field>
-            </Grid>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}>
-                {" "}
-                Account Title(account name as per bank records){" "}
-              </label>
-              <Field name="acc-nolder">
+                  </Grid>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}>
+                      {" "}
+                      Account Title(account name as per bank records){" "}
+                    </label>
+                    <Field name="acc-nolder">
                       {(props) => (
                         <div>
                           <input
@@ -501,10 +519,10 @@ const AccountSetup = () => {
                         </div>
                       )}
                     </Field>
-            </Grid>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}> Bank Name </label>
-              <Field name="bank_name">
+                  </Grid>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}> Bank Name </label>
+                    <Field name="bank_name">
                       {(props) => (
                         <div>
                           <input
@@ -514,15 +532,15 @@ const AccountSetup = () => {
                         </div>
                       )}
                     </Field>
-            </Grid>
-          </Grid>
-        </div>
+                  </Grid>
+                </Grid>
+              </div>
 
-        <div style={{ marginTop: "30px" }}>
-          <Grid container spacing={2}>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}> Branch Name </label>
-              <Field name="bran_name">
+              <div style={{ marginTop: "30px" }}>
+                <Grid container spacing={2}>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}> Branch Name </label>
+                    <Field name="bran_name">
                       {(props) => (
                         <div>
                           <input
@@ -531,10 +549,11 @@ const AccountSetup = () => {
                           ></input>
                         </div>
                       )}
-                    </Field>            </Grid>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}> IFSC </label>
-              <Field name="ifsc">
+                    </Field>{" "}
+                  </Grid>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}> IFSC </label>
+                    <Field name="ifsc">
                       {(props) => (
                         <div>
                           <input
@@ -543,13 +562,14 @@ const AccountSetup = () => {
                           ></input>
                         </div>
                       )}
-                    </Field>            </Grid>
-            <Grid item xs={3}>
-              <label className={classes.inputTitle}>
-                {" "}
-                Swift Code(optional){" "}
-              </label>
-              <Field name="swift">
+                    </Field>{" "}
+                  </Grid>
+                  <Grid item xs={3}>
+                    <label className={classes.inputTitle}>
+                      {" "}
+                      Swift Code(optional){" "}
+                    </label>
+                    <Field name="swift">
                       {(props) => (
                         <div>
                           <input
@@ -559,11 +579,11 @@ const AccountSetup = () => {
                         </div>
                       )}
                     </Field>
-            </Grid>
-          </Grid>
-        </div>
-    
-        {/* <div>
+                  </Grid>
+                </Grid>
+              </div>
+
+              {/* <div>
           <div>
             <h2 className={classes.heading}> Password </h2>
           </div>
@@ -620,12 +640,10 @@ const AccountSetup = () => {
           </Grid>
         </div>
          */}
-             
             </form>
           )}
         ></Form>
       </div>
-
       <Link to="/">
         <button>GoBack</button>
       </Link>
