@@ -1,0 +1,90 @@
+import React, { Fragment } from "react";
+import { createUseStyles } from "react-jss";
+import startImage from "./common/img/start-bg.png";
+import uniEnrollLogo from "./common/img/unicity-enroll.png";
+import selectImage from "./common/img/white_bg_60.png";
+import { Grid } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import StepperBar from "./StepperBar";
+const useStyles = createUseStyles({
+  logo: {
+    margin: "18px",
+    padding: "2px",
+    display: "block",
+    float: "left",
+  },
+  stepperBar: {
+    display: "block",
+    overflowX: "hidden",
+    width:"100%",
+    marginTop:"2px"
+    
+  },
+  stepperTitle:{
+    margin: "5px 0px 0px 18px",
+    padding: "0px",
+    display: "block",
+    float: "left",
+    fontSize:"15px",
+    fontWeight:"700",
+    textTransform:"uppercase",
+    boxSizing:"border-box",
+    color:"#333"
+
+  }
+});
+
+const Start = () => {
+  const classes = useStyles();
+  return (
+    <Fragment>
+      <div>
+        {/* <div className={classes.logo}>
+          <a href="http://localhost:3000/">
+            <img src={uniEnrollLogo} alt="Unicity Enroll"></img>
+          </a>
+        </div>
+        <div className={classes.stepperBar}>
+            <StepperBar></StepperBar>
+        </div>
+      </div> */}
+        <Grid
+          container
+          direction="column"
+          justify="flex-start"
+          alignItems="flex-start"
+        >
+          <Grid item md={12}>
+            <div className={classes.logo}>
+              <a href="http://localhost:3000/">
+                <img src={uniEnrollLogo} alt="Unicity Enroll"></img>
+              </a>
+            </div>
+          </Grid>
+        </Grid>
+        <div className={classes.stepperBar}>
+          <StepperBar></StepperBar>
+        </div>
+<div>
+<Grid
+          container
+          direction="column"
+          justify="flex-start"
+          alignItems="flex-start"
+        >
+          <Grid item md={12}>
+            <span className={classes.stepperTitle}>  SELECT YOUR MARKET</span>
+          </Grid>
+        </Grid>
+</div>
+        <div>
+          <Link to="/account_setup">
+            <button>Continue</button>
+          </Link>
+        </div>
+      </div>
+    </Fragment>
+  );
+};
+
+export default Start;

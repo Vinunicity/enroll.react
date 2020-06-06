@@ -2,9 +2,9 @@ import React, { Fragment } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {createUseStyles} from 'react-jss';
-import AccountSetup from './component/React-final-form/AccountSetup';
-import Start from './component/React-final-form/Start';
-import Summary from './component/React-final-form/Summary';
+import Start from './component/Start';
+import accountSetup from './component/AccountSetup';
+import Summary from './component/Summary';
 import  {BrowserRouter as Router, Switch, Route }from'react-router-dom';
 
  const useStyles = createUseStyles({
@@ -20,7 +20,7 @@ import  {BrowserRouter as Router, Switch, Route }from'react-router-dom';
     <div className="App">
       <Switch>
      <Route path = "/" exact component = {Start}></Route>
-     <Route path = "/account_setup" component = {AccountSetup}></Route>
+     <Route path = "/account_setup" component = {accountSetup}></Route>
      <Route path = "/summary" component = {Summary}></Route>
      </Switch>
      
