@@ -1,11 +1,12 @@
-import React, { Fragment } from "react";
-import { createUseStyles } from "react-jss";
-import startImage from "./common/img/start-bg.png";
-import uniEnrollLogo from "./common/img/unicity-enroll.png";
-import selectImage from "./common/img/white_bg_60.png";
-import { Grid } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import StepperBar from "./StepperBar";
+import React, { Fragment } from 'react';
+import { createUseStyles } from 'react-jss';
+import startImage from './common/img/start-bg.png';
+import uniEnrollLogo from './common/img/unicity-enroll.png';
+import selectImage from './common/img/white_bg_60.png';
+import { Grid } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import StepperBar from './StepperBar';
+import Footer from './Footer';
 const useStyles = createUseStyles({
   logo: {
     margin: "18px",
@@ -84,7 +85,7 @@ const Start = () => {
             <Grid item md={10}>
               <span className={classes.stepperTitle}> SELECT YOUR MARKET</span>
             </Grid>
-{/* //TODO Current page indicator has to be Bold */}
+            {/* //TODO Current page indicator has to be Bold */}
             <Grid item md={2} className={classes.pageIndicator}>
               <span
                 className={classes.currentPageIndicator}
@@ -94,6 +95,10 @@ const Start = () => {
               </span>
             </Grid>
           </Grid>
+        </div>
+
+        <div>
+         <Footer></Footer>
         </div>
         <div>
           <Link to="/account_setup">
