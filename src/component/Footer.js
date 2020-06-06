@@ -13,7 +13,7 @@ const useStyles = createUseStyles({
     borderColor: "#ccc",
     display: "inline-block",
     textAlign: "center",
-    verticaAlign: "middle",
+    verticalAlign: "middle",
     cursor: "pointer",
     backgroundImage: "none",
     border: "1px solid transparent",
@@ -29,14 +29,15 @@ const useStyles = createUseStyles({
     color: "#fff",
     backgroundColor: "#37a9df",
     borderColor: "#239fda",
-    display: "inline-block",
+    display: "relative",
     textAlign: "center",
-    verticaAlign: "middle",
+    verticalAlign: "middle",
     cursor: "pointer",
     backgroundImage: "none",
     border: "1px solid transparent",
     userSelect: "none",
     display: "relative",
+    marginTop:"1px"
   },
   footerText: {
     marginLeft: "14px",
@@ -44,7 +45,12 @@ const useStyles = createUseStyles({
     fontSize: "14px",
     lineHeight: "1.42",
     color: "#333",
+    marginTop:"5px"
   },
+  // footerDiv:{
+  //   margin:"0px",
+  //   padding:"0px"
+  // }
 });
 
 const Footer = () => {
@@ -52,7 +58,7 @@ const Footer = () => {
 
   return (
     <Fragment>
-      <div>
+      <div className={classes.footerDiv}>
         <Grid
           container
           direction="row"
