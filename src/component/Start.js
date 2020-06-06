@@ -16,22 +16,31 @@ const useStyles = createUseStyles({
   stepperBar: {
     display: "block",
     overflowX: "hidden",
-    width:"100%",
-    marginTop:"2px"
-    
+    width: "100%",
+    marginTop: "2px",
   },
-  stepperTitle:{
+  stepperTitle: {
     margin: "5px 0px 0px 18px",
     padding: "0px",
     display: "block",
     float: "left",
-    fontSize:"15px",
-    fontWeight:"700",
-    textTransform:"uppercase",
-    boxSizing:"border-box",
-    color:"#333"
-
-  }
+    fontSize: "15px",
+    fontWeight: "700",
+    textTransform: "uppercase",
+    boxSizing: "border-box",
+    color: "#333",
+  },
+  pageIndicator: {
+    textAlign: "right",
+    paddingRight: "18px",
+    color: "#333",
+  },
+  currentPageIndicator: {
+    // textAlign:"right",
+    // paddingRight:"18px",
+    color: "#333",
+    fontWeight: "20px",
+  },
 });
 
 const Start = () => {
@@ -65,18 +74,27 @@ const Start = () => {
         <div className={classes.stepperBar}>
           <StepperBar></StepperBar>
         </div>
-<div>
-<Grid
-          container
-          direction="column"
-          justify="flex-start"
-          alignItems="flex-start"
-        >
-          <Grid item md={12}>
-            <span className={classes.stepperTitle}>  SELECT YOUR MARKET</span>
+        <div>
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="flex-start"
+          >
+            <Grid item md={10}>
+              <span className={classes.stepperTitle}> SELECT YOUR MARKET</span>
+            </Grid>
+{/* //TODO Current page indicator has to be Bold */}
+            <Grid item md={2} className={classes.pageIndicator}>
+              <span
+                className={classes.currentPageIndicator}
+                style={{ fontWeight: "20px" }}
+              >
+                1<span>/3</span>
+              </span>
+            </Grid>
           </Grid>
-        </Grid>
-</div>
+        </div>
         <div>
           <Link to="/account_setup">
             <button>Continue</button>
