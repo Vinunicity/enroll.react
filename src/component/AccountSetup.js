@@ -1,9 +1,57 @@
-import React, { Component } from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { createUseStyles } from "react-jss";
 import { Grid } from "@material-ui/core";
-
+import uniEnrollLogo from "./common/img/unicity-enroll.png";
+import StepperBar from "./StepperBar";
 const useStyles = createUseStyles({
+  logo: {
+    marginLeft: "14px",
+    padding: "2px",
+    display: "block",
+    float: "left",
+    marginBottom: "3px",
+    marginTop: "18px",
+  },
+  stepperBar: {
+    display: "block",
+    overflowX: "hidden",
+    width: "100%",
+    marginTop: "2px",
+  },
+  stepperTitle: {
+    margin: "5px 0px 14px 18px",
+    padding: "0px",
+    display: "block",
+    float: "left",
+    fontSize: "15px",
+    fontWeight: "700",
+    textTransform: "uppercase",
+    boxSizing: "border-box",
+    color: "#333",
+  },
+  stepperTitle: {
+    margin: "5px 0px 14px 18px",
+    padding: "0px",
+    display: "block",
+    float: "left",
+    fontSize: "15px",
+    fontWeight: "700",
+    textTransform: "uppercase",
+    boxSizing: "border-box",
+    color: "#333",
+  },
+  pageIndicator: {
+    textAlign: "right",
+    paddingRight: "18px",
+    color: "#333",
+  },
+  currentPageIndicator: {
+    // textAlign:"right",
+    // paddingRight:"18px",
+    color: "#333",
+    fontWeight: "20px",
+  },
   //   enrl_setting_title: {
   //     textAlign: "left",
   //   },
@@ -32,8 +80,81 @@ const useStyles = createUseStyles({
 const AccountSetup = () => {
   const classes = useStyles();
   return (
-    <div>
+    <Fragment>
       <div>
+        <div>
+          <Grid
+            container
+            direction="row"
+            justify="flex-start"
+            alignItems="flex-start"
+          >
+            <Grid item md={9} xs={3}>
+              <Grid container>
+                <Grid item md={12}>
+                  <div className={classes.logo}>
+                    <a href="http://localhost:3000/">
+                      <img src={uniEnrollLogo} alt="Unicity Enroll"></img>
+                    </a>
+                  </div>
+                </Grid>
+              </Grid>
+              <Grid item md={12}>
+                <Grid container>
+                  <Grid item md={12}>
+                    <div className={classes.stepperBar}>
+                      <StepperBar></StepperBar>
+                    </div>
+                  </Grid>
+                  <Grid item md={10}>
+                    <span className={classes.stepperTitle}> ACCOUNT SETUP</span>
+                  </Grid>
+                  {/* //TODO Current page indicator has to be Bold */}
+                  <Grid item md={2} className={classes.pageIndicator}>
+                    <span
+                      className={classes.currentPageIndicator}
+                      style={{ fontWeight: "20px" }}
+                    >
+                      2<span>/3</span>
+                    </span>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid item md={3} alignContent="stretch">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum.
+            </Grid>
+          </Grid>
+        </div>
+      </div>
+
+      {/* <div>
+          <Grid
+            container
+            direction="row"
+            justify="space-between"
+            alignItems="flex-start"
+          >
+            <Grid item md={12}>
+              <div className={classes.stepperBar}>
+                <StepperBar></StepperBar>
+              </div>
+            </Grid>
+           
+          </Grid>
+        </div> */}
+
+      {/* <div>
         <h1 className={classes.enrl_setting_title}>Account Setup</h1>
         <h2 className={classes.enrl_setting_title}>Enrolment Settings</h2><hr></hr>
         <p> Please fill out the enrollment application below </p>
@@ -366,15 +487,16 @@ const AccountSetup = () => {
                     <span>Show Password</span>
                 </Grid>
           </Grid>
-      </div>
-
+      </div> */}
+      {/* <div>
       <Link to="/">
         <button>GoBack</button>
       </Link>
       <Link to="/summary">
         <button>Continue</button>
       </Link>
-    </div>
+      </div> */}
+    </Fragment>
   );
 };
 export default AccountSetup;

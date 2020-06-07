@@ -20,7 +20,7 @@ import  {BrowserRouter as Router, Switch, Route }from'react-router-dom';
     <div className="App">
       <Switch>
      <Route path = "/" exact component = {Start}></Route>
-     <Route path = "/account_setup" component = {accountSetup}></Route>
+     <Route path = "/account-setup" component = {accountSetup}></Route>
      <Route path = "/summary" component = {Summary}></Route>
      </Switch>
      

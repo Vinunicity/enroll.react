@@ -65,7 +65,7 @@ const Footer = () => {
           justify="space-between"
           alignItems="flex-end"
         >
-          <Grid item md={8}>
+          <Grid item md={8} xs={10}>
             <p className={classes.footerText}>
               Need Help? footer_fax_number Executive Support
               800-UNICITY(8642489) M-F, 8 a.m. - 6 p.m. MDT
@@ -75,7 +75,7 @@ const Footer = () => {
             </p>
           </Grid>
 
-          <Grid item md={4}>
+          <Grid item md={4} xs ={2}>
 {/* //TODO Arrow symbol for continue */}
             <div>
               <button className={classes.buttonContinue}>Continue</button>

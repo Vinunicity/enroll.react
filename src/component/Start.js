@@ -9,10 +9,12 @@ import StepperBar from "./StepperBar";
 import Footer from "./Footer";
 const useStyles = createUseStyles({
   logo: {
-    margin: "18px",
+    marginLeft: "14px",
     padding: "2px",
     display: "block",
     float: "left",
+    marginBottom:"3px",
+    marginTop:"18px"
   },
   stepperBar: {
     display: "block",
