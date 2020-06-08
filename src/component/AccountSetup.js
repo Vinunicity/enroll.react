@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { createUseStyles } from "react-jss";
+import { Form, Field } from "react-final-form";
+
 import { Grid } from "@material-ui/core";
 import uniEnrollLogo from "./common/img/unicity-enroll.png";
 import StepperBar from "./StepperBar";
@@ -20,7 +22,7 @@ const useStyles = createUseStyles({
     marginTop: "2px",
   },
   stepperTitle: {
-    margin: "5px 0px 14px 18px",
+    margin: "5px 0px 0px 18px",
     padding: "0px",
     display: "block",
     float: "left",
@@ -30,17 +32,7 @@ const useStyles = createUseStyles({
     boxSizing: "border-box",
     color: "#333",
   },
-  stepperTitle: {
-    margin: "5px 0px 14px 18px",
-    padding: "0px",
-    display: "block",
-    float: "left",
-    fontSize: "15px",
-    fontWeight: "700",
-    textTransform: "uppercase",
-    boxSizing: "border-box",
-    color: "#333",
-  },
+
   pageIndicator: {
     textAlign: "right",
     paddingRight: "18px",
@@ -52,6 +44,96 @@ const useStyles = createUseStyles({
     color: "#333",
     fontWeight: "20px",
   },
+  pageWrapper: {
+    background: "#eeeff0",
+    backgroundPositionX: "0%",
+    backgroundPositionY: "0%",
+    backgroundAttachment: "scroll",
+    backgroundRepeat: "repeat",
+    backgroundImage: "none",
+    backgroundSize: "auto",
+    backgroundOrigin: "padding-box",
+    backgroundClip: "border-box",
+  },
+  heading: {
+    margin: "8px 10px 3px 14px",
+    fontSize: "20px",
+    color: "#000000",
+    borderBottom: "2px solid #777b7c",
+    paddingBottom: "8px",
+    fontWeight: "400",
+    lineHeight: "1.1",
+    textAlign: "left",
+    position: "relative",
+    paddingTop: "20px",
+  },
+  row:{
+    marginLeft:"15px",
+    marginRight:"15px"
+  },
+  col_sm:{
+    width:"33.33%",
+    position:"relative",
+    minHeight:"1px",
+    paddingLeft:"15px",
+    paddingRight:"15px",
+    float:"left"
+  },
+  formGroup:{
+    marginBottom:"15px",
+  },
+  formLabel:{
+    // marginBottom:"15px",
+    color:"#777b7c",
+    fontWeight:"400",
+    height:"40",
+    display:"inline-block",
+    maxWidth:"100%",
+    marginBottom:"15px",
+
+  },
+  // formControl:{
+  //   display:"block",
+  //   width:"100%",color:"#555",
+  //   backgroundColor:"#fff",
+  //   backgroundImage:"none",
+  //   border:"1px solid #ccc",
+  // },
+  inputLg:{
+    padding:"10px 16px",fontSize:"18px",
+    borderRadius:"6px",
+    height:"46px",
+    lineHeight:"46px",
+    fontSize:"18px",
+  },
+  formControl: {
+    display: "block",
+    //marginLeft: "13px",
+    height: "46px",
+    lineHeight: "46px",
+    width: "90%",
+    color: "#555555",
+    backgroundColor: "#ffffff",
+    backgroundImage: "none",
+    border: "1px solid #cccccc",
+    textTransform: "none",
+    position: "relative",
+    //marginTop: "5px",
+    //marginTop: "20px",
+    margin: "10px 305px 3px 14px",
+    borderRadius: "6px",
+  },
+  inputTitle: {
+    //margin: "5px 588px 3px 14px",
+    fontSize: "20px",
+    color: "#777b7c",
+    fontWeight: "normal",
+    fontSize: "14px",
+    height: "40px",
+    //paddingBottom: "45px",
+    margin: "10px 305px 3px 14px",
+  },
+ 
   //   enrl_setting_title: {
   //     textAlign: "left",
   //   },
@@ -76,6 +158,13 @@ const useStyles = createUseStyles({
   //     borderRadius:"6px",
   // }
 });
+
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const onSubmit = async (values) => {
+  await sleep(300);
+  window.alert(JSON.stringify(values, 0, 2));
+};
 
 const AccountSetup = () => {
   const classes = useStyles();
@@ -118,6 +207,117 @@ const AccountSetup = () => {
                       2<span>/3</span>
                     </span>
                   </Grid>
+                </Grid>
+                <Grid item md={12}>
+                  <div className={classes.pageWrapper}>
+                    <div>
+                      <h2 className={classes.heading}>Enrollment Settings</h2>
+                    </div>
+                    <Form
+                      onSubmit={onSubmit}
+                      render={({
+                        handleSubmit,
+                        reset,
+                        submitting,
+                        pristine,
+                        values,
+                      }) => (
+                        <form onSubmit={handleSubmit} noValidate>
+                          <Grid container spacing={3}>
+                          <Grid item md={12}>
+                            <div
+                              style={{ textAlign: "left", marginLeft: "15px" }}
+                            >
+                              <span>
+                                Please fill out the enrollment application below
+                              </span>
+                            </div>
+                          </Grid>
+                          <Grid item xs md={4}>
+                  <label className={classes.inputTitle}>Language</label>
+                  <Field name="firstName">
+                    {(props) => (
+                      <div>
+                        <select className={classes.formControl}>
+                          <option className={classes.formControl}>Hindi</option>
+                          <option className={classes.formControl}>
+                            English
+                          </option>
+                        </select>
+                      </div>
+                    )}
+                  </Field>
+                </Grid>
+
+                <Grid item xs md={4}>
+                  <label className={classes.inputTitle}>
+                    Your Enroller's ID:
+                  </label>
+                  <Field name="enroller_id">
+                    {(props) => (
+                      <div>
+                        <input
+                          type="text"
+                          className={classes.formControl}
+                        ></input>
+                      </div>
+                    )}
+                  </Field>
+                </Grid>
+
+                <Grid item xs md={4}>
+                  <label className={classes.inputTitle}>
+                    Your Sponsor's ID:
+                  </label>
+                  <Field name="sponsor_id">
+                    {(props) => (
+                      <div>
+                        <input
+                          type="text"
+                          className={classes.formControl}
+                        ></input>
+                      </div>
+                    )}
+                  </Field>
+                </Grid>
+                          {/* <div className ={classes.row}>
+                          <Grid item xs md={4} >
+                            <div className={classes.col_sm, classes.formGroup}>
+                              <div className={classes.formLabel}>
+                  <label className={classes.formLabel} >Language</label></div>
+                  <Field name="firstName">
+                    {(props) => (
+                      <div className={classes.formControl, classes.inputLg}>
+                        <select >
+                          <option >Hindi</option>
+                          <option >
+                            English
+                          </option>
+                        </select>
+                      </div>
+                    )}
+                  </Field>
+                  </div>
+                </Grid>
+                </div> */}
+                {/* <Grid item xs md={4}>
+                  <label className={classes.inputTitle} style={{textAlign:"left"}}>Your Enroller's ID:</label>
+                  <Field name="firstName">
+                    {(props) => (
+                     <div>
+                     <input
+                       type="text"
+                       className={classes.formControl}
+                     ></input>
+                   </div>
+                    )}
+                  </Field>
+                </Grid> */}
+                </Grid>
+                        </form>
+                      )}
+                    ></Form>
+                  </div>
                 </Grid>
               </Grid>
             </Grid>
