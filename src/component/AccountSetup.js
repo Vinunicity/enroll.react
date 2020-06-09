@@ -67,30 +67,29 @@ const useStyles = createUseStyles({
     position: "relative",
     paddingTop: "20px",
   },
-  row:{
-    marginLeft:"15px",
-    marginRight:"15px"
+  row: {
+    marginLeft: "15px",
+    marginRight: "15px",
   },
-  col_sm:{
-    width:"33.33%",
-    position:"relative",
-    minHeight:"1px",
-    paddingLeft:"15px",
-    paddingRight:"15px",
-    float:"left"
+  col_sm: {
+    width: "33.33%",
+    position: "relative",
+    minHeight: "1px",
+    paddingLeft: "15px",
+    paddingRight: "15px",
+    float: "left",
   },
-  formGroup:{
-    marginBottom:"15px",
+  formGroup: {
+    marginBottom: "15px",
   },
-  formLabel:{
+  formLabel: {
     // marginBottom:"15px",
-    color:"#777b7c",
-    fontWeight:"400",
-    height:"40",
-    display:"inline-block",
-    maxWidth:"100%",
-    marginBottom:"15px",
-
+    color: "#777b7c",
+    fontWeight: "400",
+    height: "40",
+    display: "inline-block",
+    maxWidth: "100%",
+    marginBottom: "15px",
   },
   // formControl:{
   //   display:"block",
@@ -99,19 +98,20 @@ const useStyles = createUseStyles({
   //   backgroundImage:"none",
   //   border:"1px solid #ccc",
   // },
-  inputLg:{
-    padding:"10px 16px",fontSize:"18px",
-    borderRadius:"6px",
-    height:"46px",
-    lineHeight:"46px",
-    fontSize:"18px",
+  inputLg: {
+    padding: "10px 16px",
+    fontSize: "18px",
+    borderRadius: "6px",
+    height: "46px",
+    lineHeight: "46px",
+    fontSize: "18px",
   },
   formControl: {
     display: "block",
     //marginLeft: "13px",
     height: "46px",
     lineHeight: "46px",
-    width: "90%",
+    width: "86%",
     color: "#555555",
     backgroundColor: "#ffffff",
     backgroundImage: "none",
@@ -133,7 +133,7 @@ const useStyles = createUseStyles({
     //paddingBottom: "45px",
     margin: "10px 305px 3px 14px",
   },
- 
+
   //   enrl_setting_title: {
   //     textAlign: "left",
   //   },
@@ -198,8 +198,8 @@ const AccountSetup = () => {
                   <Grid item md={10}>
                     <span className={classes.stepperTitle}> ACCOUNT SETUP</span>
                   </Grid>
-                  {/* //TODO Current page indicator has to be Bold */}
-                  <Grid item md={2} className={classes.pageIndicator}>
+̥                  {/* //TODO Current page indicator has to be Bold */}
+ ̥                 <Grid item md={2} className={classes.pageIndicator}>
                     <span
                       className={classes.currentPageIndicator}
                       style={{ fontWeight: "20px" }}
@@ -224,63 +224,216 @@ const AccountSetup = () => {
                       }) => (
                         <form onSubmit={handleSubmit} noValidate>
                           <Grid container spacing={3}>
-                          <Grid item md={12}>
-                            <div
-                              style={{ textAlign: "left", marginLeft: "15px" }}
-                            >
-                              <span>
-                                Please fill out the enrollment application below
-                              </span>
-                            </div>
-                          </Grid>
-                          <Grid item xs md={4}>
-                  <label className={classes.inputTitle}>Language</label>
-                  <Field name="firstName">
-                    {(props) => (
-                      <div>
-                        <select className={classes.formControl}>
-                          <option className={classes.formControl}>Hindi</option>
-                          <option className={classes.formControl}>
-                            English
-                          </option>
-                        </select>
-                      </div>
-                    )}
-                  </Field>
-                </Grid>
+                            <Grid item md={12}>
+                              <div
+                                style={{
+                                  textAlign: "left",
+                                  marginLeft: "15px",
+                                }}
+                              >
+                                <span style={{ fontSize: "14px" }}>
+                                  Please fill out the enrollment application
+                                  below
+                                </span>
+                              </div>
+                            </Grid>
+                            <Grid item xs md={4}>
+                              <label className={classes.inputTitle}>
+                                Language
+                              </label>
+                              <Field name="firstName">
+                                {(props) => (
+                                  <div>
+                                    <select className={classes.formControl}>
+                                      <option className={classes.formControl}>
+                                        Hindi
+                                      </option>
+                                      <option className={classes.formControl}>
+                                        English
+                                      </option>
+                                    </select>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
 
-                <Grid item xs md={4}>
-                  <label className={classes.inputTitle}>
-                    Your Enroller's ID:
-                  </label>
-                  <Field name="enroller_id">
-                    {(props) => (
-                      <div>
-                        <input
-                          type="text"
-                          className={classes.formControl}
-                        ></input>
-                      </div>
-                    )}
-                  </Field>
-                </Grid>
+                            <Grid item xs md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 196px 3px 14px" }}
+                              >
+                                Your Enroller's ID:
+                              </label>
+                              <Field name="enroller_id">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
 
-                <Grid item xs md={4}>
-                  <label className={classes.inputTitle}>
-                    Your Sponsor's ID:
-                  </label>
-                  <Field name="sponsor_id">
-                    {(props) => (
-                      <div>
-                        <input
-                          type="text"
-                          className={classes.formControl}
-                        ></input>
-                      </div>
-                    )}
-                  </Field>
-                </Grid>
-                          {/* <div className ={classes.row}>
+                            <Grid item xs md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 190px 3px 14px" }}
+                              >
+                                Your Sponsor's ID:
+                              </label>
+                              <Field name="sponsor_id">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={12}>
+                              <div
+                                style={{
+                                  textAlign: "left",
+                                  marginLeft: "15px",
+                                  marginTop: "-15px",
+                                  display: "block",
+                                  marginBottom: "10px",
+                                }}
+                              >
+                                <span
+                                  style={{ fontSize: "14px", color: "#737373" }}
+                                >
+                                  If you do not know your Enroller's or
+                                  Sponsor’s ID, please contact Unicity Customer
+                                  Service at 1-800-102-2467 click here to{" "}
+                                  <a href="#">enquiry</a>
+                                </span>
+                              </div>
+                            </Grid>
+                            <Grid item md={12}>
+                              <div style={{ marginTop: "-36px" }}>
+                                <h2 className={classes.heading}>
+                                  About You{" "}
+                                  <small
+                                    style={{
+                                      fontSize: "71%",
+                                      fontWeight: "400",
+                                      color: "#777",
+                                      lineHeight: "1",
+                                    }}
+                                  >
+                                    (For all future correspondence please make
+                                    sure the Email ID and Contact number is
+                                    valid. Your login credentials will be sent
+                                    to the specified E-mail ID)
+                                  </small>
+                                </h2>
+                              </div>
+                            </Grid>
+
+                            <Grid item xs md={4} xs={12}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 231px 3px 14px" }}
+                              >
+                                First Name
+                              </label>
+                              <Field name="sponsor_id">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item xs md={4}>
+                    <label className={classes.inputTitle}
+                    style={{ margin: "10px 236px 3px 14px" }}>Last Name</label>
+                    <Field name="lastName">
+                      {(props) => (
+                        <div>
+                          <input
+                            type="text"
+                            className={classes.formControl}
+                          ></input>
+                        </div>
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item xs md={4}>
+                    <label className={classes.inputTitle}
+                    style={{ margin: "10px 147px 3px 14px" }}>
+                      Birth date: (dd/mm/yyyy)
+                    </label>
+                    <Field name="dob">
+                      {(props) => (
+                        <div>
+                          <input
+                            type="text"
+                            className={classes.formControl}
+                          ></input>
+                        </div>
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item md={4}>
+                    <label className={classes.inputTitle}
+                    style={{ margin: "10px 140px 3px 14px" }}>
+                      Phone(10 digit numbers):
+                    </label>
+                    <Field name="phone">
+                      {(props) => (
+                        <div >
+                          <span style={{textAlign:"left",clear:"both", float:"left", marginLeft:"18px"}}>+91 </span>
+                          <div >
+                          <input
+                            type="text"
+                            className={classes.formControl}
+                            style={{width:"70%",marginLeft:"62px"}}
+                          ></input>
+                          </div>
+                        </div>
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item md={4}>
+                    <label className={classes.inputTitle}>Email</label>
+                    <Field name="email">
+                      {(props) => (
+                        <div>
+                          <input
+                            type="text"
+                            className={classes.formControl}
+                          ></input>
+                        </div>
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item md={4}>
+                    <label className={classes.inputTitle}
+                    style={{ margin: "10px 203px 3px 14px" }}>
+                      PAN: (optional){" "}
+                    </label>
+                    <Field name="pan">
+                      {(props) => (
+                        <div>
+                          <input
+                            type="text"
+                            className={classes.formControl}
+                          ></input>
+                        </div>
+                      )}
+                    </Field>
+                  </Grid>
+
+                            {/* <div className ={classes.row}>
                           <Grid item xs md={4} >
                             <div className={classes.col_sm, classes.formGroup}>
                               <div className={classes.formLabel}>
@@ -300,7 +453,7 @@ const AccountSetup = () => {
                   </div>
                 </Grid>
                 </div> */}
-                {/* <Grid item xs md={4}>
+                            {/* <Grid item xs md={4}>
                   <label className={classes.inputTitle} style={{textAlign:"left"}}>Your Enroller's ID:</label>
                   <Field name="firstName">
                     {(props) => (
@@ -313,7 +466,7 @@ const AccountSetup = () => {
                     )}
                   </Field>
                 </Grid> */}
-                </Grid>
+                          </Grid>
                         </form>
                       )}
                     ></Form>
@@ -328,6 +481,24 @@ const AccountSetup = () => {
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book. It has
               survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever since the 1500s, when an unknown printer took a
+              galley of type and scrambled it to make a type specimen book. It
+              has survived not only five centuries, but also the leap into
+              electronic typesetting, remaining essentially unchanged. It was
+              popularised in the 1960s with the release of Letraset sheets
+              containing Lorem Ipsum passages, and more recently with desktop
+              publishing software like Aldus PageMaker including versions of
+              Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and
+              typesetting industry. Lorem Ipsum has been the industry's standard
+              dummy text ever since the 1500s, when an unknown printer took a
+              galley of type and scrambled it to make a type specimen book. It
+              has survived not only five centuries, but also the leap into
               electronic typesetting, remaining essentially unchanged. It was
               popularised in the 1960s with the release of Letraset sheets
               containing Lorem Ipsum passages, and more recently with desktop
