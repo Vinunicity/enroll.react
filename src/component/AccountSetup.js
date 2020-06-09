@@ -133,6 +133,14 @@ const useStyles = createUseStyles({
     //paddingBottom: "45px",
     margin: "10px 305px 3px 14px",
   },
+  radioStyle: {
+    cursor: "pointer",
+    background: "#fff",
+    borderRadius: "5px",
+    padding: "7px",
+    width: "auto",
+    marginRight: "7px",
+  },
 
   //   enrl_setting_title: {
   //     textAlign: "left",
@@ -198,8 +206,8 @@ const AccountSetup = () => {
                   <Grid item md={10}>
                     <span className={classes.stepperTitle}> ACCOUNT SETUP</span>
                   </Grid>
-̥                  {/* //TODO Current page indicator has to be Bold */}
- ̥                 <Grid item md={2} className={classes.pageIndicator}>
+                  {/* //TODO Current page indicator has to be Bold */}
+                  <Grid item md={2} className={classes.pageIndicator}>
                     <span
                       className={classes.currentPageIndicator}
                       style={{ fontWeight: "20px" }}
@@ -354,84 +362,176 @@ const AccountSetup = () => {
                               </Field>
                             </Grid>
                             <Grid item xs md={4}>
-                    <label className={classes.inputTitle}
-                    style={{ margin: "10px 236px 3px 14px" }}>Last Name</label>
-                    <Field name="lastName">
-                      {(props) => (
-                        <div>
-                          <input
-                            type="text"
-                            className={classes.formControl}
-                          ></input>
-                        </div>
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item xs md={4}>
-                    <label className={classes.inputTitle}
-                    style={{ margin: "10px 147px 3px 14px" }}>
-                      Birth date: (dd/mm/yyyy)
-                    </label>
-                    <Field name="dob">
-                      {(props) => (
-                        <div>
-                          <input
-                            type="text"
-                            className={classes.formControl}
-                          ></input>
-                        </div>
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item md={4}>
-                    <label className={classes.inputTitle}
-                    style={{ margin: "10px 140px 3px 14px" }}>
-                      Phone(10 digit numbers):
-                    </label>
-                    <Field name="phone">
-                      {(props) => (
-                        <div >
-                          <span style={{textAlign:"left",clear:"both", float:"left", marginLeft:"18px"}}>+91 </span>
-                          <div >
-                          <input
-                            type="text"
-                            className={classes.formControl}
-                            style={{width:"70%",marginLeft:"62px"}}
-                          ></input>
-                          </div>
-                        </div>
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item md={4}>
-                    <label className={classes.inputTitle}>Email</label>
-                    <Field name="email">
-                      {(props) => (
-                        <div>
-                          <input
-                            type="text"
-                            className={classes.formControl}
-                          ></input>
-                        </div>
-                      )}
-                    </Field>
-                  </Grid>
-                  <Grid item md={4}>
-                    <label className={classes.inputTitle}
-                    style={{ margin: "10px 203px 3px 14px" }}>
-                      PAN: (optional){" "}
-                    </label>
-                    <Field name="pan">
-                      {(props) => (
-                        <div>
-                          <input
-                            type="text"
-                            className={classes.formControl}
-                          ></input>
-                        </div>
-                      )}
-                    </Field>
-                  </Grid>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 236px 3px 14px" }}
+                              >
+                                Last Name
+                              </label>
+                              <Field name="lastName">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item xs md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 147px 3px 14px" }}
+                              >
+                                Birth date: (dd/mm/yyyy)
+                              </label>
+                              <Field name="dob">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 140px 3px 14px" }}
+                              >
+                                Phone(10 digit numbers):
+                              </label>
+                              <Field name="phone">
+                                {(props) => (
+                                  <div>
+                                    <span
+                                      style={{
+                                        textAlign: "left",
+                                        clear: "both",
+                                        float: "left",
+                                        marginLeft: "18px",
+                                      }}
+                                    >
+                                      +91{" "}
+                                    </span>
+                                    <div>
+                                      <input
+                                        type="text"
+                                        className={classes.formControl}
+                                        style={{
+                                          width: "70%",
+                                          marginLeft: "62px",
+                                        }}
+                                      ></input>
+                                    </div>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4}>
+                              <label className={classes.inputTitle}>
+                                Email
+                              </label>
+                              <Field name="email">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 207px 3px 14px" }}
+                              >
+                                PAN: (optional){" "}
+                              </label>
+                              <Field name="pan">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 186px 3px 14px" }}
+                              >
+                                Gender (optional)
+                              </label>
+                              <div style={{ marginLeft: "20px" }}>
+                                <input
+                                  type="radio"
+                                  className={classes.radioStyle}
+                                  style={{
+                                    display: "inline",
+                                    background: "#fff",
+                                  }}
+                                />
+                                Male
+                                <input
+                                  type="radio"
+                                  className={classes.radioStyle}
+                                  style={{ display: "inline" }}
+                                />
+                                Female
+                                <input
+                                  type="radio"
+                                  className={classes.radioStyle}
+                                  style={{ display: "inline" }}
+                                />
+                                Transgender
+                              </div>
+                            </Grid>
+                            <Grid item md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 218px 3px 14px" }}
+                              >
+                                Maritial Status
+                              </label>
+                              <input
+                                type="radio"
+                                className={classes.radioStyle}
+                                style={{ display: "inline" }}
+                              />
+                              Single
+                              <input
+                                type="radio"
+                                className={classes.radioStyle}
+                                style={{ display: "inline" }}
+                              />
+                              Married
+                            </Grid>
+                            <Grid item xs={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{
+                                  margin: "10px 185px 3px 14px",
+                                  textAlign: "justify",
+                                }}
+                              >
+                                {" "}
+                                I want to receive email communications related
+                                to my business{" "}
+                                <span>
+                                  {" "}
+                                  <input type="checkbox"></input>
+                                </span>
+                              </label>
+                            </Grid>
 
                             {/* <div className ={classes.row}>
                           <Grid item xs md={4} >
