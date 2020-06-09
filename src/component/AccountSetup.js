@@ -532,7 +532,55 @@ const AccountSetup = () => {
                                 </span>
                               </label>
                             </Grid>
-
+                            <Grid item md={12}>
+                              <div>
+                                <h2 className={classes.heading}>
+                                  Co-Applicant/Nominee
+                                </h2>
+                              </div>
+                            </Grid>
+                            <Grid item md={8}>
+                            <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 577px 3px 14px" }}
+                              >
+                                Full Name
+                              </label>
+                    <Field name="co_fullName">
+                      {(props) => (
+                        <div>
+                          <input
+                            type="text"
+                            className={classes.formControl}
+                            style={{width:"96%"}}
+                          ></input>
+                        </div>
+                      )}
+                    </Field>
+                  </Grid>
+                  <Grid item md={4}>
+                    <label className={classes.inputTitle}>Relationship</label>
+                    <Field name="relation">
+                      {(props) => (
+                        <div>
+                          <select className={classes.formControl}>
+                            <option className={classes.formControl}>
+                              Spouse
+                            </option>
+                            <option className={classes.formControl}>
+                              Child
+                            </option>
+                            <option className={classes.formControl}>
+                              Parent
+                            </option>
+                            <option className={classes.formControl}>
+                              Sibling
+                            </option>
+                          </select>
+                        </div>
+                      )}
+                    </Field>
+                  </Grid>
                             {/* <div className ={classes.row}>
                           <Grid item xs md={4} >
                             <div className={classes.col_sm, classes.formGroup}>
