@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { createUseStyles } from "react-jss";
 import { Form, Field } from "react-final-form";
+import Footer from "./Footer";
+
 
 import { Grid } from "@material-ui/core";
 import uniEnrollLogo from "./common/img/unicity-enroll.png";
@@ -141,7 +143,13 @@ const useStyles = createUseStyles({
     width: "auto",
     marginRight: "7px",
   },
-
+  progress: {
+    height: "10px",
+    marginTop: "5px",
+    marginLeft: "29px",
+    backgroundColor: "#f7f7f7",
+    width: "80%",
+  },
   //   enrl_setting_title: {
   //     textAlign: "left",
   //   },
@@ -540,47 +548,334 @@ const AccountSetup = () => {
                               </div>
                             </Grid>
                             <Grid item md={8}>
-                            <label
+                              <label
                                 className={classes.inputTitle}
                                 style={{ margin: "10px 577px 3px 14px" }}
                               >
                                 Full Name
                               </label>
-                    <Field name="co_fullName">
+                              <Field name="co_fullName">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                      style={{ width: "96%" }}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4}>
+                              <label className={classes.inputTitle}>
+                                Relationship
+                              </label>
+                              <Field name="relation">
+                                {(props) => (
+                                  <div>
+                                    <select className={classes.formControl}>
+                                      <option className={classes.formControl}>
+                                        Spouse
+                                      </option>
+                                      <option className={classes.formControl}>
+                                        Child
+                                      </option>
+                                      <option className={classes.formControl}>
+                                        Parent
+                                      </option>
+                                      <option className={classes.formControl}>
+                                        Sibling
+                                      </option>
+                                    </select>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={12}>
+                              <div>
+                                <h2 className={classes.heading}>
+                                  Mailing Address
+                                </h2>
+                              </div>
+                            </Grid>
+                            <Grid item md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 240px 3px 14px" }}
+                              >
+                                Address 1
+                              </label>
+                              <Field name="Add_1">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                      placeholder="Street Address P.O.Box, etc"
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4} xs={12}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 240px 3px 14px" }}
+                              >
+                                Address 2
+                              </label>
+                              <Field name="Add_2">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                      placeholder="Apt #,Suite,Unit,Bldg,Floor, etc."
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4} xs={12}>
+                              <label className={classes.inputTitle}>City</label>
+                              <Field name="City">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4} xs={12}>
+                              <label className={classes.inputTitle}>
+                                State
+                              </label>
+                              <Field name="relation">
+                                {(props) => (
+                                  <div>
+                                    <select className={classes.formControl}>
+                                      <option className={classes.formControl}>
+                                        Karnataka
+                                      </option>
+                                      <option className={classes.formControl}>
+                                        Tamilnadu
+                                      </option>
+                                    </select>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            {/* <Grid item xs={3}>
+                    <label className={classes.inputTitle}>Postal Code</label>
+                    <input type="text" className={classes.formControl}></input>
+                  </Grid> */}
+                            <Grid item xs={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 230px 3px 14px" }}
+                              >
+                                Postal Code
+                              </label>
+                              <Field name="postal-code">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={12} xs={12}>
+                              <div>
+                                <h2 className={classes.heading}>
+                                  Direct Deposit for Commissions
+                                </h2>
+                              </div>
+                            </Grid>
+                            <Grid item md={4} xs={12}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 194px 3px 14px" }}
+                              >
+                                {" "}
+                                Account Number{" "}
+                              </label>
+                              <Field name="acc-num">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4} xs={12}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 2px 3px 14px" }}
+                              >
+                                {" "}
+                                Account Title(account name as per bank records){" "}
+                              </label>
+                              <Field name="acc-nolder">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 233px 3px 14px" }}
+                              >
+                                {" "}
+                                Bank Name{" "}
+                              </label>
+                              <Field name="bank_name">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 216px 3px 14px" }}
+                              >
+                                {" "}
+                                Branch Name{" "}
+                              </label>
+                              <Field name="bran_name">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>{" "}
+                            </Grid>
+                            <Grid item md={4}>
+                              <label className={classes.inputTitle}>
+                                {" "}
+                                IFSC{" "}
+                              </label>
+                              <Field name="ifsc">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>{" "}
+                            </Grid>
+                            <Grid item md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 175px 3px 14px" }}
+                              >
+                                {" "}
+                                Swift Code(optional){" "}
+                              </label>
+                              <Field name="swift">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="text"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={12}>
+                              <div>
+                                <h2 className={classes.heading}>Password</h2>
+                              </div>
+                            </Grid>
+                            <Grid item md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 163px 3px 14px" }}
+                              >
+                                {" "}
+                                Create your password:{" "}
+                              </label>
+                              <Field name="swift">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="password"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4}>
+                              <label
+                                className={classes.inputTitle}
+                                style={{ margin: "10px 163px 3px 14px" }}
+                              >
+                                Retype your password:
+                              </label>
+                              <Field name="swift">
+                                {(props) => (
+                                  <div>
+                                    <input
+                                      type="password"
+                                      className={classes.formControl}
+                                    ></input>
+                                  </div>
+                                )}
+                              </Field>
+                            </Grid>
+                            <Grid item md={4}>
+                              {/* <label className={classes.inputTitle}
+              style={{ margin: "10px 163px 3px 14px" }}>
+                Retype your password:
+              </label>
+              <Field name="swift">
                       {(props) => (
                         <div>
                           <input
-                            type="text"
+                            type="password"
                             className={classes.formControl}
-                            style={{width:"96%"}}
                           ></input>
                         </div>
                       )}
-                    </Field>
-                  </Grid>
-                  <Grid item md={4}>
-                    <label className={classes.inputTitle}>Relationship</label>
-                    <Field name="relation">
-                      {(props) => (
-                        <div>
-                          <select className={classes.formControl}>
-                            <option className={classes.formControl}>
-                              Spouse
-                            </option>
-                            <option className={classes.formControl}>
-                              Child
-                            </option>
-                            <option className={classes.formControl}>
-                              Parent
-                            </option>
-                            <option className={classes.formControl}>
-                              Sibling
-                            </option>
-                          </select>
-                        </div>
-                      )}
-                    </Field>
-                  </Grid>
+                    </Field> */}
+                            </Grid>
+                            <Grid md={4}>
+                              <div className={classes.progress}></div>
+                            </Grid>
+                            <Grid md ={4}>
+                                <div style={{marginLeft:"-135px"}}> 
+                                  <input type="checkbox"/> <span>Show my password </span> 
+                                  </div>
+                              </Grid>
+                              
+
                             {/* <div className ={classes.row}>
                           <Grid item xs md={4} >
                             <div className={classes.col_sm, classes.formGroup}>
@@ -656,6 +951,10 @@ const AccountSetup = () => {
           </Grid>
         </div>
       </div>
+      <div style={{marginTop:"20px"}}>
+          <Footer></Footer>
+        </div>
+        
 
       {/* <div>
           <Grid

@@ -291,7 +291,7 @@ const Start = () => {
             </div>
            </Grid> */}
 
-        <div>
+        <div >
           <Footer></Footer>
         </div>
         {/* <div>
